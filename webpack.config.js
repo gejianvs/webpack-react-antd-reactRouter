@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: path.join(__dirname, 'src/index.js'),
@@ -17,13 +18,15 @@ module.exports = {
         enforce: 'pre',
         use: [{
             loader: 'babel-loader',
-        }, {
-            loader: 'eslint-loader', // 指定启用eslint-loader
-            options: {
-                formatter: require('eslint-friendly-formatter'),
-                emitWarning: false
-            }
-        }]
+        }, 
+        // {
+        //     loader: 'eslint-loader', // 指定启用eslint-loader
+        //     options: {
+        //         formatter: require('eslint-friendly-formatter'),
+        //         emitWarning: false
+        //     }
+        // }
+      ]
       },
       {
         test: /\.(css|less)$/,
@@ -55,5 +58,11 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'My App',
+      template: 'src/index.html'
+    })
+  ],
   mode: 'development'
 };

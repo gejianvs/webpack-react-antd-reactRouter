@@ -1,5 +1,5 @@
 {
-  "presets": ["env","react"]
+  "presets": ["@babel/preset-react","@babel/preset-env"]
   // antd按需引入
   // "plugins": ["react-hot-loader/babel", ["import", { "libraryName": "antd", "libraryDirectory": "es","style": "css" }], "transform-runtime"]
 }
