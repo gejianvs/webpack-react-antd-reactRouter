@@ -1,0 +1,2 @@
+1: cnpm i webpack webpack-cli -g  cnpm i webpack webpack-cli -D(cnpm i webpack-cli -g 必须要有)
+2: 由于版本的原因 导致执行webpack-dev-server 时抛错提示需要安装 Cannot find module 'webpack-cli/bin/config-yargs'
