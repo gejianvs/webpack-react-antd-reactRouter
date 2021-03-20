@@ -42,14 +42,16 @@ module.exports = {
                   localIdentName: '[name]-[local]-[hash:base64:5]',
                   modules:true
               }
-          }, {
-              loader: 'postcss-loader',
-              options: {           // 如果没有options这个选项将会报错 No PostCSS Config found
-                  plugins: (loader) => [
-                      require('autoprefixer')(), //CSS浏览器兼容
-                  ]
-              }
-          },{
+          },
+          //  {
+          //     loader: 'postcss-loader',
+          //     options: {           // 如果没有options这个选项将会报错 No PostCSS Config found
+          //         plugins: (loader) => [
+          //             require('autoprefixer')(), //CSS浏览器兼容
+          //         ]
+          //     }
+          // },
+          {
               loader: 'less-loader',
               options: {
                   javascriptEnabled: true,
@@ -64,5 +66,6 @@ module.exports = {
       template: 'src/index.html'
     })
   ],
+  // plugins: [new HtmlWebpackPlugin()],
   mode: 'development'
 };
